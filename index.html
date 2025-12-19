@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minecraft Update Notice</title>
+
+    <!-- Minecraft-style pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Press Start 2P', cursive;
+        background: url('https://i.imgur.com/8IuMD1v.png'); /* Dirt block texture */
+        background-size: 64px;
+      }
+
+      #messageBox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.8s ease-out;
+      }
+
+      #messageContent {
+        background: #c6c6c6;
+        border: 6px solid #555;
+        padding: 35px;
+        max-width: 750px;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      }
+
+      #messageContent h2 {
+        margin-top: 0;
+        font-size: 20px;
+      }
+
+      #messageContent p {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 18px;
+      }
+
+      #closeBtn {
+        margin-top: 20px;
+        padding: 14px 28px;
+        font-size: 14px;
+        border: 3px solid #3a6e3a;
+        border-radius: 4px;
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+
+      #closeBtn:hover {
+        background: #3e8e41;
+      }
+
+      .fade-out {
+        opacity: 0 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Splash Message -->
+    <div id="messageBox">
+      <div id="messageContent">
+        <h2>Important Update!</h2>
+
+        <p>
+          Hope you're all enjoying winter break! I wanted to let everyone know that the game will soon be updated from <strong>1.8.8</strong> to <strong>1.12</strong>, which includes the World of Color update.
+        </p>
+
+        <p>
+          To make sure you don’t lose any worlds you care about, please back them up before the update.  
+          Just click on the world you want to save and then select <strong>Backup</strong> to download it as an <strong>.epk</strong> file.
+        </p>
+
+        <p>
+          This upgrade will bring smoother performance, new features, and a much better overall experience.
+        </p>
+
+        <p>
+          And fingers crossed that <strong>math-hw.pages.dev</strong> stays unblocked for a long time.
+        </p>
+
+        <p>- John McCombs</p>
+
+        <button id="closeBtn">I Understand</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("closeBtn").addEventListener("click", () => {
+        const box = document.getElementById("messageBox");
+        box.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = "game.html";
+        }, 800);
+      });
+    </script>
+
+  </body>
+</html>
